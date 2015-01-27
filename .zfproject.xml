@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+<projectProfile type="default" version="1.10">
+  <projectDirectory>
+    <projectProfileFile filesystemName=".zfproject.xml"/>
+    <applicationDirectory classNamePrefix="Application_">
+      <apisDirectory enabled="false"/>
+      <configsDirectory>
+        <applicationConfigFile type="ini"/>
+      </configsDirectory>
+      <controllersDirectory>
+        <controllerFile controllerName="Index">
+          <actionMethod actionName="index"/>
+        </controllerFile>
+        <controllerFile controllerName="Error"/>
+        <controllerFile controllerName="Article">
+          <actionMethod actionName="index"/>
+          <actionMethod actionName="liste"/>
+          <actionMethod actionName="details"/>
+        </controllerFile>
+        <controllerFile controllerName="Cat">
+          <actionMethod actionName="index"/>
+        </controllerFile>
+        <controllerFile controllerName="Contact">
+          <actionMethod actionName="index"/>
+        </controllerFile>
+        <controllerFile controllerName="Commentaire">
+          <actionMethod actionName="index"/>
+          <actionMethod actionName="ajouter"/>
+        </controllerFile>
+      </controllersDirectory>
+      <formsDirectory enabled="false"/>
+      <layoutsDirectory enabled="false"/>
+      <modelsDirectory>
+        <modelFile modelName="Articles"/>
+        <dbTableDirectory>
+          <dbTableFile dbTableName="Articles"/>
+          <dbTableFile dbTableName="Users"/>
+          <dbTableFile dbTableName="Categories"/>
+          <dbTableFile dbTableName="Commentaires"/>
+        </dbTableDirectory>
+      </modelsDirectory>
+      <modulesDirectory enabled="false"/>
+      <viewsDirectory>
+        <viewScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Index">
+            <viewScriptFile forActionName="index"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Error">
+            <viewScriptFile forActionName="error"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Article">
+            <viewScriptFile forActionName="index"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Cat">
+            <viewScriptFile forActionName="index"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Article">
+            <viewScriptFile forActionName="liste"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Article">
+            <viewScriptFile forActionName="details"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Contact">
+            <viewScriptFile forActionName="index"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Commentaire">
+            <viewScriptFile forActionName="index"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Commentaire">
+            <viewScriptFile forActionName="ajouter"/>
+          </viewControllerScriptsDirectory>
+        </viewScriptsDirectory>
+        <viewHelpersDirectory/>
+        <viewFiltersDirectory enabled="false"/>
+      </viewsDirectory>
+      <bootstrapFile filesystemName="Bootstrap.php"/>
+    </applicationDirectory>
+    <dataDirectory enabled="false">
+      <cacheDirectory enabled="false"/>
+      <searchIndexesDirectory enabled="false"/>
+      <localesDirectory enabled="false"/>
+      <logsDirectory enabled="false"/>
+      <sessionsDirectory enabled="false"/>
+      <uploadsDirectory enabled="false"/>
+    </dataDirectory>
+    <docsDirectory>
+      <file filesystemName="README.txt"/>
+    </docsDirectory>
+    <libraryDirectory>
+      <zfStandardLibraryDirectory enabled="false"/>
+    </libraryDirectory>
+    <publicDirectory>
+      <publicStylesheetsDirectory enabled="false"/>
+      <publicScriptsDirectory enabled="false"/>
+      <publicImagesDirectory enabled="false"/>
+      <publicIndexFile filesystemName="index.php"/>
+      <htaccessFile filesystemName=".htaccess"/>
+    </publicDirectory>
+    <projectProvidersDirectory enabled="false"/>
+    <temporaryDirectory enabled="false"/>
+    <testsDirectory>
+      <testPHPUnitConfigFile filesystemName="phpunit.xml"/>
+      <testApplicationDirectory>
+        <testApplicationBootstrapFile filesystemName="bootstrap.php"/>
+        <testApplicationControllerDirectory>
+          <testApplicationControllerFile filesystemName="ArticleControllerTest.php"/>
+          <testApplicationControllerFile filesystemName="CatControllerTest.php"/>
+          <testApplicationControllerFile filesystemName="ContactControllerTest.php"/>
+          <testApplicationControllerFile filesystemName="CommentaireControllerTest.php"/>
+        </testApplicationControllerDirectory>
+      </testApplicationDirectory>
+      <testLibraryDirectory>
+        <testLibraryBootstrapFile filesystemName="bootstrap.php"/>
+      </testLibraryDirectory>
+    </testsDirectory>
+  </projectDirectory>
+</projectProfile>

@@ -1,0 +1,14 @@
+<?php
+if(count($this->list)>0):
+    echo $this->partialLoop("partialArticles.php",$this->list);
+
+    echo $this->paginationControl($this->paginator, 'Sliding', 'paginator.phtml');
+
+else:
+?>
+<div style="border: 1px solid #dd0000; background-color: #FFE4DF;color: #dd0000;font-weight: bold;">
+    Aucun article trouvé
+</div>
+<?php
+endif;
+?>

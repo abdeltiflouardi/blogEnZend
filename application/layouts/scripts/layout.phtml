@@ -1,0 +1,68 @@
+<?php
+    echo $this->docType() . "\n";
+?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<?php
+	echo $this->headTitle() . "\n";
+
+	$this->headMeta()->appendHttpEquiv('Content-Type', 'text/html; charset=UTF-8')
+	                 ->appendHttpEquiv('Content-Language', 'fr-FR');
+
+
+	echo $this->headMeta() . "\n";
+
+        $this->headLink()->appendStylesheet('/css/global.css');
+        $this->headLink()->appendStylesheet('/css/style.css');
+        $this->headLink()->appendStylesheet('/css/jquery.css');
+        echo $this->headLink(). "\n";
+
+        $jquery = $this->jQuery();
+		$jquery->javascriptCaptureStart();
+	?>
+		function insertComment(idA){
+			var texte = $("#commentaireText"+idA).val();
+			$.get("/commentaire/ajouter", { comment: texte , idArticle: idA },
+			function success(data){
+                                if(eval(data) > 0){
+                                    //alert($("#span"+idA).text());
+                                    x = eval($("#span"+idA).text()) + 1;
+                                    $("#span"+idA).text(x);
+                                    $("#comment"+idA).fadeOut();
+                                }
+			});
+		}
+	<?php
+		$jquery->javascriptCaptureEnd();
+
+                echo $jquery;
+?>
+</head>
+<body>
+    <div id="header"></div>
+    <div id="content">
+<?php echo $this->layout()->content; ?>
+    </div>
+
+    <div id="left">
+        <ul class="leftMenu">
+            <li class="titleMenu">Menu</li>
+            <li><a href="/">Accueil</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </ul>
+
+        <ul class="leftMenu">
+            <li class="titleMenu">Catégories</li>
+            <?php foreach ($this->getMenuCat() as $k=>$v): ?>
+            <li>
+                <a href="<?php echo $this->url(array('idCat'=>$v['idCat'],'libelleCat'=>$v['slugCat'],'page'=>1), 'cat'); ?>">
+                    <?php echo $v['libelleCat']; ?>
+                </a>
+            </li>
+            <?php endforeach;?>
+        </ul>
+    </div>
+
+    <div class="clear"></div>
+</body>
+</html>
